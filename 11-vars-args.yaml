@@ -1,4 +1,4 @@
-- name: play level variables #The playbook will collect the information from invertory file
+- name:  variables from args #The playbook will collect the information from invertory file
   hosts: node
   tasks:
   - name: print course info
