@@ -1,7 +1,7 @@
 - name: Variables from file
   hosts: local
   connection: local
-  vars_files:
+  vars_files: #Accessing the variables from this file so instead of chainging the code and effecting the code we are maintaing the variables in a seperate file
   - course.yaml
   tasks:
   - name: print course info
