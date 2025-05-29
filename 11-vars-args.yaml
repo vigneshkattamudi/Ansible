@@ -1,6 +1,7 @@
-- name:  variables from args #The playbook will collect the information from invertory file
-  hosts: node
+- name: variables from inventory
+  hosts: local
+  connection: local
   tasks:
   - name: print course info
     ansible.builtin.debug:
-      msg: "Hello {{ COURSE }}, Course duration: {{ DURATION }}, Trainer is {{ TRAINER }}"
+      msg: "Hello I am learning {{ COURSE }}, Duration: {{ DURATION }}, Trainer is: {{ TRAINER }}"
