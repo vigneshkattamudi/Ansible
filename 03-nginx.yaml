@@ -1,11 +1,11 @@
 - name: install nginx
   hosts: node
-  become: yes
+  become: yes # To run the script with root access or (true)
   tasks:
   - name: nginx install
     ansible.builtin.package:
      name: nginx
-     state: present
+     state: present # latest or yes
 
   - name: start and enable 
     ansible.builtin.service:

@@ -1,0 +1,23 @@
+- name: multi play in ansible
+  connection: local
+  hosts: local
+  tasks:
+  - name: play 1 and task 1
+    ansible.builtin.debug:
+    msg: " Hello Play 1 and Task 1"
+
+  - name: play 1 and task 2
+    ansible.builtin.debug:
+    msg: " Hello Play 1 and Task 2"
+
+- name: multi play in ansible
+  connection: local
+  hosts: local
+  tasks:
+  - name: play 2 and task 1
+    ansible.builtin.debug:
+    msg: " Hello Play 2 and Task 1"
+
+  - name: play 2 and task 2
+    ansible.builtin.debug:
+    msg: " Hello Play 2 and Task 2"
