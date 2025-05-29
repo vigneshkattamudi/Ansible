@@ -12,6 +12,6 @@
 
   - name: print course info DEVOPS
     vars:
-     COURSE: DEVOPS
+     COURSE: DEVOPS #task var has high priority
     ansible.builtin.debug:
       msg: "Hello {{ COURSE }}, Course duration: {{ DURATION }}, Trainer is {{ TRAINER }}"
