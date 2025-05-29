@@ -1,0 +1,11 @@
+- name: play level variables #The playbook will collect the information from invertory file
+  hosts: node
+  tasks:
+  - name: print course info
+    ansible.builtin.debug:
+      msg: "Hello {{ COURSE }}, Course duration: {{ DURATION }}, Trainer is {{ TRAINER }}"
+
+  tasks:
+  - name: print course info
+    ansible.builtin.debug:
+      msg: "Hello {{ COURSE }}, Course duration: {{ DURATION }}, Trainer is {{ TRAINER }}"
