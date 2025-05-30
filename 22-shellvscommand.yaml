@@ -1,0 +1,35 @@
+- name: shell vs command
+  hosts: frontend
+  tasks:
+  - name: redirect ls output to a file
+    #ansible.builtin.command: "ls -ltr > /tmp/output.txt" 
+    ansible.builtin.shell: "ls -ltr > /tmp/output.txt" # login to the server and execute command inside
+    register: command_result
+    
+
+  - name: print the outcome
+    ansible.builtin.debug:
+      msg: "{{ command_result }}"
+
+  - name: redirect ls output to a file using command
+    ansible.builtin.command: "ls -ltr"
+    #ansible.builtin.shell: "ls -ltr > /tmp/output.txt"
+    register: command_output
+    # command module, just issues the command
+  
+  - name: print the output
+    ansible.builtin.debug:
+      msg: "{{ command_output }}"
+
+  - name: check the process
+    ansible.builtin.shell: ps -ef | grep ssh
+    register: output
+
+  - name: check the process
+    ansible.builtin.command: ps -ef | grep ssh
+    register: output
+
+
+    #Command will execute from outside where shell will login to the server to execute.
+    #Shell can we used for complex.
+

@@ -1,0 +1,12 @@
+- name: installing packages using loops
+  hosts: frontend
+  become: yes
+  tasks:
+  - name: installing packages using loops
+    ansible.builtin.dnf:
+      name: "{{ item.name }}"
+      state: "{{ item.state }}"
+    loop:
+    - { name: 'nginx', state: 'present'}
+    - { name: 'mysql', state: 'absent'}
+    - { name: 'zip', state: 'absent'}

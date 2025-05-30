@@ -1,0 +1,17 @@
+- name: Tags playbook    
+  hosts: localhost 
+  connection: local          
+  tasks: 
+  - name: ping the node server 
+    ansible.builtin.ping:
+  - name: Print message
+    ansible.builtin.debug:
+      msg: "Hello DevOps"
+    tags:   #Tags are used to run or skip the tasks 
+    - DevOps
+
+  - name: Print message
+    ansible.builtin.debug:
+      msg: "Hello AWS"
+    tags: 
+    - AWS
